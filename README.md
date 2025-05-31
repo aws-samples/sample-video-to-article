@@ -6,6 +6,13 @@ When a presentation video is input, the application transcribes the presentation
 
 By using this application, users can review content more efficiently than watching videos, and it also makes it easier to expand video content in one language to other language regions.
 
+## Architecture Overview
+* The application takes presentation videos (.mp4) as input and generates PDF articles as output.
+* Built as a Docker container, the application runs locally and integrates with AWS services including Amazon S3, Amazon Transcribe, and Amazon Bedrock.
+* The application leverages Amazon Bedrock's GenAI capabilities throughout the pipeline for tasks such as content extraction, image filtering, transcript refinement, and translation.
+
+![Architecture](./images/architecture.png)
+
 ## Usage
 
 1. Setup AWS credentials and configuration
@@ -26,8 +33,6 @@ By using this application, users can review content more efficiently than watchi
    `./scripts/run-script.sh`
 8. Check the result
     * The output PDF will be placed in `data/output/{date}-{input file name}/{date}-{input file name}.pdf`
-
-![Architecture](./images/architecture.png)
 
 ## Customization
 
