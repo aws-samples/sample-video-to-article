@@ -1,0 +1,36 @@
+processors:
+  important_thumbnail_filter:
+    filter_thumbnails_by_image_change:
+      change_threshold: 0.01
+    filter_thumbnails_by_ml:
+      max_workers: 50
+      batch_size: 6
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+    
+  thumbnail_content_extractor:
+    extract_thumbnail_contents:
+      max_workers: 100
+      model_id: "anthropic.claude-3-haiku-20240307-v1:0"
+    extract_keywords:
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+    
+  transcript_revisor:
+    revise:
+      max_workers: 30
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+    fix_paragraph_boundary:
+      max_workers: 30
+      model_id: "anthropic.claude-3-5-sonnet-20241022-v2:0"
+    
+  transcript_translator:
+    translate:
+      max_workers: 30 
+      batch_size: 5
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+
+  content_organizer:
+    summary:
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+    chapters:
+      model_id: "us.anthropic.claude-3-7-sonnet-20250219-v1:0"
+

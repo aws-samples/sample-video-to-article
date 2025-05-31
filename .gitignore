@@ -1,0 +1,28 @@
+# Dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+.mypy_cache/
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/input/*
+data/output/*
+!data/input/.gitkeep
+!data/output/.gitkeep
+
+scripts/run-script.sh
