@@ -16,18 +16,22 @@ By using this application, users can review content more efficiently than watchi
     * In the `us-west-2` region, enable model access for Anthropic Claude 3 Haiku, 3.5 Sonnet (v2), 3.7 Sonnet on Amazon Bedrock. (https://docs.aws.amazon.com/bedrock/latest/userguide/model-access-modify.html)
 3. Create an S3 bucket
     * Create an S3 bucket in `us-west-2` region for Amazon Transcribe to temporarily store audio files.
-4. Copy and modify a script file
+4. Place a video file
+    * Create a `data/input/` folder and place the mp4 video file as `data/input/xxxx.mp4`
+5. Copy and modify a script file
     * Copy `scripts/run-script.sample.sh` to `scripts/run-script.sh` and edit variables to match your task and environment (VIDEO_TITLE, VIDEO_PATH, TRANSCRIBE_S3_BUCKET, TARGET_LANGUAGE).
-5. (Optional) Make the script executable:  
+6. (Optional) Make the script executable:  
    `chmod +x scripts/run-script.sh`
-6. Run the script:  
+7. Run the script:  
    `./scripts/run-script.sh`
+8. Check the result
+    * The output PDF will be placed in `data/output/{date}-{input file name}/{date}-{input file name}.pdf`
 
 ![Architecture](./images/architecture.png)
 
 ## Customization
 
-You can change the number of parallel workers (`max_workers`) and the AI model (`model_id`) for each processing step by editing `config.yaml`.
+You can change the number of parallel workers (`max_workers`) and the model (`model_id`) for each processing step by editing `config.yaml`.
 
 ```yaml
 processors:
